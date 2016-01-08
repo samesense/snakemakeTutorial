@@ -6,6 +6,7 @@
 
 #### Outline
 * Snakemake install overview
+[See Jeremy's instructions](https://github.research.chop.edu/leipzigj/fastq_to_gvcf_for_noor_dawany)
 * Python envs
 * Refosco snakemake
 * Respublica snakemake
