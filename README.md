@@ -34,3 +34,14 @@ Python virtural environments allow users multiple private module libraries. No n
 * Refosco env
 
     Add to your .bash_profile
+    
+##### Python syntax
+* List comprehensions
+
+        [row for row in matrix]
+        [row for row in matrix if row[0] == 1]
+    
+* List management
+ 
+        rule mk:
+            input: expand
