@@ -7,7 +7,7 @@ rule align:
     output: WORK + 'aln/s1'
     shell:  'touch {output}'
 
- rule call_variants:
+rule call_variants:
     input:  WORK + 'aln/s1'
     output: WORK + 'vars/s1'
     shell:  'touch {output}'

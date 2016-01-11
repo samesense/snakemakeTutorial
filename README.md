@@ -39,7 +39,10 @@ Python virtural environments allow users multiple private module libraries. No n
     Add to your .bash_profile
 
 ##### Respublica examples
-* Demo code/res1.sh
+* [code/res1.py](code/res1.py)
+* [code/res2.1.py](code/res2.1.py)
+* [code/res2.2.py](code/res2.2.py)
+* [code/res2.3.py](code/res2.3.py)
 
 ##### Snakemake cli
 * Touch to update

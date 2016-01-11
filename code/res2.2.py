@@ -9,7 +9,7 @@ rule align:
     output: WORK + 'aln/{sample}'
     shell:  'touch {output}'
 
- rule call_variants:
+rule call_variants:
     input:  WORK + 'aln/{sample}'
     output: WORK + 'vars/{sample}'
     shell:  'touch {output}'

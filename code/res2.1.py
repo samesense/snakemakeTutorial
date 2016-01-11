@@ -2,7 +2,7 @@
    multi sample
 snakefile"""
 SAMPLES = ('s1', 's2', 's3')
-WORK = '../work/'
+WORK = '../work/res2.1/'
 
 rule align:
     output: WORK + 'aln/{sample}'
