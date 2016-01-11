@@ -11,6 +11,8 @@
 * Respublica snakemake
 * Snakemake cli usage
 * Respublica job scripts
+* Dependencies
+* Temp files
 * Python syntax
 * Wildcards
 * Labeled inputs
@@ -35,6 +37,34 @@ Python virtural environments allow users multiple private module libraries. No n
 * Refosco env
 
     Add to your .bash_profile
+
+##### Respublica examples
+* Demo code/res1.sh
+
+##### Snakemake cli
+* Touch to update
+* Dryrun
+
+##### Respublica job scripts
+* Respublica code/jobscript.sh
+
+##### Refosco examples
+* Demo
+
+##### Dependencies
+* Touch file
+* Delete old files
+
+##### Temp files
+
+##### Wildcards
+
+##### Labeled inputs
+
+##### Threads
+
+##### Unknown output files
+
     
 ##### Python syntax
 * List comprehensions
@@ -46,3 +76,12 @@ Python virtural environments allow users multiple private module libraries. No n
  
         rule mk:
             input: expand
+
+
+##### Functions as inputs
+
+##### Tips
+* Seperate downstream analysis and heavy memory/time scripts
+    * Minimizes dependency checks
+    * Decreases iteration time for plots/filters
+    * Ex. sf1.py has variant calling/summarize and sf2.py has paper figures
