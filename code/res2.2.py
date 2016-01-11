@@ -2,10 +2,13 @@
    multi sample
    w/ expand
 snakefile"""
+
 SAMPLES = ('s1', 's2', 's3')
+DATA = '../data/'
 WORK = '../work/res2.2/'
 
 rule align:
+    input:  DATA + 'fastq/{sample}'
     output: WORK + 'aln/{sample}'
     shell:  'touch {output}'
 

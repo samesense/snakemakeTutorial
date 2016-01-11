@@ -1,10 +1,13 @@
 """Three step,
    one sample
 snakefile"""
+
+DATA = '../data/'
 WORK = '../work/res1/'
 
 rule align:
-    output: WORK + 'aln/s1'
+    input:  DATA + 'fastq/{sample}'
+    output: WORK + 'aln/{sample}'
     shell:  'touch {output}'
 
 rule call_variants:

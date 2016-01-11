@@ -1,5 +1,9 @@
 # snakemakeTutorial
 
+#### References
+* [Snakemake wiki](https://bitbucket.org/snakemake/snakemake/wiki/Home)
+* [Documentation](https://bitbucket.org/snakemake/snakemake/wiki/Documentation)
+
 #### Goals
 * Run snakemake on respublica and refosco
 * Understand template snakemake scripts
@@ -9,16 +13,10 @@
 * Python envs
 * Refosco snakemake
 * Respublica snakemake
-* Snakemake cli usage
 * Respublica job scripts
-* Dependencies
-* Temp files
+* Snakemake cli usage
+* Dependency demo
 * Python syntax
-* Wildcards
-* Labeled inputs
-* Unknown output files
-* Functions as inputs
-* Threads
 * Tips
 
 ##### Snakemake installation
@@ -38,37 +36,29 @@ Python virtural environments allow users multiple private module libraries. No n
 
     Add to your .bash_profile
 
-##### Respublica examples
-* [code/res1.py](code/res1.py)
-* [code/res2.1.py](code/res2.1.py)
-* [code/res2.2.py](code/res2.2.py)
-* [code/res2.3.py](code/res2.3.py)
+##### Examples
+* 3 steps, one sample [code/res1.py](code/res1.py)
+* multi sample [code/res2.1.py](code/res2.1.py)
+* expand [code/res2.2.py](code/res2.2.py)
+* multi sample & chrom [code/res2.3.py](code/res2.3.py)
+* temp files [code/res2.4.py](code/res2.4.py)
+* named input files [code/res2.5.py](code/res2.5.py)
+* referencing wildcards [code/res2.6.py](code/res2.6.py)
+* functions as inputs [code/res2.7.py](code/res2.7.py)
+* sentinel output [code/res2.8.py](code/res2.8.py)
+* threads [code/res2.9.py](code/res2.9.py)
+* qsub [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh)
+* jobscripts [code/res3.2.py](code/run.3.2.py), [code/code/res3.2.py](code/res3.2.py), [code/jobscript.sh](code/jobscript.sh)
 
 ##### Snakemake cli
 * Touch to update
-* Dryrun
+* --rerun-incomplete
+* --dryrun
 
-##### Respublica job scripts
-* Respublica code/jobscript.sh
-
-##### Refosco examples
-* Demo
-
-##### Dependencies
+##### Dependencies demo
 * Touch file
 * Delete old files
 
-##### Temp files
-
-##### Wildcards
-
-##### Labeled inputs
-
-##### Threads
-
-##### Unknown output files
-
-    
 ##### Python syntax
 * List comprehensions
 
@@ -88,3 +78,4 @@ Python virtural environments allow users multiple private module libraries. No n
     * Minimizes dependency checks
     * Decreases iteration time for plots/filters
     * Ex. sf1.py has variant calling/summarize and sf2.py has paper figures
+    * Watch out for temp file clobbering (ex samtools sort needs a tmp prefix to avoid over-writting tmp files)

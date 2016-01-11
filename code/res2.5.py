@@ -5,12 +5,16 @@
    w/ tmp
    w/ named input
 snakefile"""
+
 SAMPLES = ('s1', 's2', 's3')
 CHROMS = range(1,4)
-WORK = '../work/res2.4/'
+
+DATA = '../data/'
+WORK = '../work/res2.5/'
 
 rule align:
-    output: WORK + 'aln/{sample}.{chrom}'
+    input:  DATA + 'fastq/{sample}.{chrom}'
+    output: temp(WORK + 'aln/{sample}.{chrom}')
     shell:  'touch {output}'
 
 rule index:
@@ -25,7 +29,7 @@ rule call_variants:
     shell:  'cat {input.bam} > {output}'
 
 rule summarize:
-    input:  expand(WORK + 'vars/{{sample}}.{chrom}',
+    input:  expand(WORK + 'vars/{{sample}}.{chrom}', \
 		   chrom = CHROMS)
     output: WORK + 'sum/{sample}'
     shell:  'touch {output}'
