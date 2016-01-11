@@ -10,6 +10,7 @@
 * Refosco snakemake
 * Respublica snakemake
 * Snakemake cli usage
+* Respublica job scripts
 * Python syntax
 * Wildcards
 * Labeled inputs
