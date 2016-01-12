@@ -46,8 +46,8 @@ Python virtual environments allow users multiple private module libraries. No ne
 * named input files [code/res2.5.py](code/res2.5.py)
 * referencing wildcards [code/res2.6.py](code/res2.6.py)
 * functions as inputs [code/res2.7.py](code/res2.7.py)
-* qsub and jobscripts [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh), [code/jobscript3.1.sh](code/jobscript3.1.sh)
-* config files [code/res3.2.py](code/run.3.2.py), [code/code/res3.3.py](code/res3.2.py), [code/jobscript3.1.sh](code/jobscript3.1.sh), [code/config3.2.json](code/config3.2.json)
+* qsub and jobscripts [code/run3.1.sh](code/run3.1.sh)
+* config files [code/run3.1.sh](code/run3.2.sh)
 
 ##### Snakemake cli
 * -j #cores
@@ -118,10 +118,10 @@ Python virtual environments allow users multiple private module libraries. No ne
 * Threads
 
         rule sort:
-	    input: "path/to/{dataset}.txt"
+            input: "path/to/{dataset}.txt"
             output: "{dataset}.sorted.txt"
             threads: 4
-	    shell: "sort --parallel {threads} {input} > {output}"
+            shell: "sort --parallel {threads} {input} > {output}"
 
     * Run three sort jobs at a time
     
