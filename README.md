@@ -164,6 +164,24 @@ Python virtual environments allow users multiple private module libraries. No ne
     * Run one sort job at a time
 
         snakemake -s sf.py -j 4
+        
+* Log files
+
+    When executing a large workflow, it is usually desirable to store the output of each job persistently in files instead of just printing it to default output and error files. For this purpose, Snakemake allows to specify log files for rules. Log files are defined via the log directive and handled similarly to output files, but they are not subject of rule matching and are not cleaned up when a job fails.
+    ```
+    rule bwa_map:
+    input:
+        "data/genome.fa",
+        lambda wildcards: config["samples"][wildcards.sample]
+    output:
+        "mapped_reads/{sample}.bam"
+    log:
+        "logs/bwa_map/{sample}.log"
+    threads: 8
+    shell:
+        "(bwa mem -t {threads} {input} | "
+        "samtools view -Sb - > {output}) 2> {log}"
+    ```
 	
 * Rerun tons of files: use mv instead of rm
 * Nohup job out and error files appear in /home
