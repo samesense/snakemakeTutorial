@@ -5,7 +5,7 @@
 * [Documentation](https://bitbucket.org/snakemake/snakemake/wiki/Documentation)
 
 #### Goals
-* Run snakemake on respublica and refosco
+* Run snakemake on respublica
 * Understand template snakemake scripts
 
 #### Outline
@@ -32,9 +32,6 @@ Python virtural environments allow users multiple private module libraries. No n
         alias p3="source activate snakeenv"
         
     Source your .bash_profile to reload variables. Calling p3 will put you in the python3 env, which already has snakemake installed.
-* Refosco env
-
-    Add to your .bash_profile
 
 ##### Examples
 * 3 steps, one sample [code/res1.py](code/res1.py)
@@ -47,15 +44,21 @@ Python virtural environments allow users multiple private module libraries. No n
 * functions as inputs [code/res2.7.py](code/res2.7.py)
 * qsub [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh)
 * jobscripts [code/res3.2.py](code/run.3.2.py), [code/code/res3.2.py](code/res3.2.py), [code/jobscript.sh](code/jobscript.sh)
+* config files [code/res3.3.py](code/run.3.3.py), [code/code/res3.3.py](code/res3.3.py), [code/jobscript.sh](code/jobscript.sh), [code/config.json](code/config.json)
 
 ##### Snakemake cli
 * Touch to update
-* --rerun-incomplete
-* --dryrun
+* --rerun-incomplete: fix broken files
+* --dryrun: see what will be executed
 
 ##### Dependencies demo
-* Touch file
-* Delete old files
+* Jobs execute if:
+    * Output file does not exist
+    * Output file needed by another executed job and does not exist
+    * Input file newer than output file
+    * Input file will be updated by other job
+    * Execution is enforced
+* Deletion of intermediate files might not trigger execution
 
 ##### Python syntax
 * range
@@ -108,6 +111,21 @@ Python virtural environments allow users multiple private module libraries. No n
             shell:  'process.sh ../file1'
 
 * Threads
+
+        rule sort:
+	    input: "path/to/{dataset}.txt"
+            output: "{dataset}.sorted.txt"
+            threads: 4
+	    shell: "sort --parallel {threads} {input} > {output}"
+
+    * Run three sort jobs at a time
+    
+        snakemake -s sf.py -j 12
+
+    * Run one sort job at a time
+
+        snakemake -s sf.py -j 4
+	
 * Rerun tons of files
     * Use mv instead of rm
 
