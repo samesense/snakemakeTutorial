@@ -50,8 +50,14 @@ Python virtual environments allow users multiple private module libraries. No ne
         ```snakemake -s res1.py summarize```
 
 * multi sample [code/res2.1.py](code/res2.1.py)
-    * Run by rule: snakemake -s res2.1.py all
-    * Run by file: snakemake -s res2.1.py ../work/res2.1/sum/s3
+    * Run by rule:
+    
+        ```snakemake -s res2.1.py all```
+
+    * Run by file:
+    
+        ```snakemake -s res2.1.py ../work/res2.1/sum/s3```
+        
 * expand [code/res2.2.py](code/res2.2.py)
 * multi sample & chrom [code/res2.3.py](code/res2.3.py)
 * temp files [code/res2.4.py](code/res2.4.py)
