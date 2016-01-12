@@ -106,7 +106,7 @@ Python virtual environments allow users multiple private module libraries. No ne
         for row in reader:
             sample = row['sample']
             id = row['sample_id']
-    ````
+    ```
 
 ##### Tips
 * Clean up
