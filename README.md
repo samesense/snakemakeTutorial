@@ -66,7 +66,7 @@ Python virtural environments allow users multiple private module libraries. No n
 * List management
  
 	rule collapse_files:
-	    input: expand(DATA + 'vars/{sample}.tab', sample=SAMPLES)
+            input: expand(DATA + 'vars/{sample}.tab', sample=SAMPLES)
             output: DATA + 'summary'
 	    run:
 		firstFile = list(input)[0]
