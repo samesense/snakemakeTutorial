@@ -69,9 +69,9 @@ Python virtural environments allow users multiple private module libraries. No n
             input: expand(DATA + 'vars/{sample}.tab', sample=SAMPLES)
             output: DATA + 'summary'
             run:
-		firstFile = list(input)[0]
-		shell('head -1 {fileFile} > {output}')
-		shell('cat {input} | grep -v header >> {output}')
+                firstFile = list(input)[0]
+                shell('head -1 {fileFile} > {output}')
+                shell('cat {input} | grep -v header >> {output}')
 
 ##### Tips
 * Seperate downstream analysis and heavy memory/time scripts
