@@ -27,7 +27,7 @@ Python virtual environments allow users multiple private module libraries. No ne
 
     Add to your .bash_profile
 
-        export PATH=/home/evansj/me/respublicaTools/anaconda3/bin:$PATH
+        export PATH=/mnt/isilon/cbmi/variome/perry/respublicaTools/anaconda3/bin:$PATH
         alias p3="source activate snakeenv"
         
     Source your .bash_profile to reload variables. Calling p3 will put you in the python3 env, which already has snakemake installed.
