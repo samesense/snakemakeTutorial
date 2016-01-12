@@ -58,6 +58,10 @@ Python virtural environments allow users multiple private module libraries. No n
 * Delete old files
 
 ##### Python syntax
+* range
+
+        chroms = list(range(1,23)) + ['X','Y']
+
 * List comprehensions
 
         [row for row in matrix]
