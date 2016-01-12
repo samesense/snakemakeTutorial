@@ -13,9 +13,9 @@
 snakefile"""
 
 SAMPLES = config["SAMPLES"]
-CHROMS = {'s1':(1,),
-          's2':(2,3),
-          's3':(3,),
+CHROMS = {'s1':['1'],
+          's2':['2','3'],
+          's3':['3'],
           }
 
 DATA = config["DATA"]
@@ -38,8 +38,10 @@ rule call_variants:
     shell:  'cat {input.bam} > {output}'
 
 def mk_chrom_input(wc):
-    return CHROMS[wc.sample]
-    
+    """Return list of WORK + 'vars/{sample}.{chrom}'"""
+    return [WORK + 'vars/%s.%s' % (wc.sample, chrom) 
+            for chrom in CHROMS[wc.sample]]
+
 rule summarize:
     input:  mk_chrom_input
     output: WORK + 'sum/{sample}'
