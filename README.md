@@ -92,15 +92,21 @@ Python virtual environments allow users multiple private module libraries. No ne
                 shell('head -1 {fileFile} > {output}')
                 shell('cat {input} | grep -v header >> {output}')
 
+* List files in directories
+    ```` 
+    import os, glob
+    files = glob.glob('fastq/*')
+    files = os.listdir('fastq/')
+    ````
 * Read files
-  
-        import csv
-        with open('file.tab') as f:
-            reader = csv.DictReader(f, delimiter='\t')
-            for row in reader:
-                sample = row['sample']
-                id = row['sample_id']
-
+    ```
+    import csv
+    with open('file.tab') as f:
+        reader = csv.DictReader(f, delimiter='\t')
+        for row in reader:
+            sample = row['sample']
+            id = row['sample_id']
+    ````
 
 ##### Tips
 * Clean up
