@@ -41,10 +41,10 @@ Python virtual environments allow users multiple private module libraries. No ne
 * 3 steps, one sample [code/res1.py](code/res1.py)
     * List rules:
     
-            ```snakemake -s res1.py -l```
+            snakemake -s res1.py -l
     * Dryrun:
     
-            ```snakemake -s res1.py --dryrun summarize```
+            snakemake -s res1.py --dryrun summarize
     * Run:
             
         ```snakemake -s res1.py summarize```
