@@ -139,6 +139,5 @@ Python virtual environments allow users multiple private module libraries. No ne
 
         snakemake -s sf.py -j 4
 	
-* Rerun tons of files
-    * Use mv instead of rm
+* Rerun tons of files: use mv instead of rm
 * Nohup job out and error files appear in /home
