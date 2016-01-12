@@ -99,14 +99,15 @@ Python virtual environments allow users multiple private module libraries. No ne
     files = os.listdir('fastq/')
     ````
 * Read files
-    ````
+
+    ```
     import csv
     with open('file.tab') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             sample = row['sample']
             id = row['sample_id']
-    ````
+    ```
 
 ##### Tips
 * Clean up
