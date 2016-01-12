@@ -45,8 +45,6 @@ Python virtural environments allow users multiple private module libraries. No n
 * named input files [code/res2.5.py](code/res2.5.py)
 * referencing wildcards [code/res2.6.py](code/res2.6.py)
 * functions as inputs [code/res2.7.py](code/res2.7.py)
-* sentinel output [code/res2.8.py](code/res2.8.py)
-* threads [code/res2.9.py](code/res2.9.py)
 * qsub [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh)
 * jobscripts [code/res3.2.py](code/run.3.2.py), [code/code/res3.2.py](code/res3.2.py), [code/jobscript.sh](code/jobscript.sh)
 
@@ -67,11 +65,14 @@ Python virtural environments allow users multiple private module libraries. No n
     
 * List management
  
-        rule mk:
-            input: expand
+        rule collapse_files:
+            input: expand(DATA + 'vars/{sample}.tab', sample=SAMPLES)
+	    output: DATA + 'summary'
+	    run:
+	        firstFile = list(input)[0]
+		shell('head -1 {fileFile} > {output}')
+		shell('cat {input} | grep -v header >> {output}')
 
-
-##### Functions as inputs
 
 ##### Tips
 * Seperate downstream analysis and heavy memory/time scripts
@@ -79,3 +80,22 @@ Python virtural environments allow users multiple private module libraries. No n
     * Decreases iteration time for plots/filters
     * Ex. sf1.py has variant calling/summarize and sf2.py has paper figures
     * Watch out for temp file clobbering (ex samtools sort needs a tmp prefix to avoid over-writting tmp files)
+* Sentinel output
+
+        rule unzip:
+            input: '../file.tar.gz'
+	    output: '../log/DONE_unzip'
+	    run:
+	        shell('tar -xvcf {input}')
+		shell('touch {output}')
+
+        rule use_unzipped_file:
+            input:  '../log/DONE_unzip'
+	    output: DATA + 'file1.processed'
+	    shell:  'process.sh ../file1'
+
+* Threads
+* Rerun tons of files
+    * Use mv instead of rm
+
+##### Summary
