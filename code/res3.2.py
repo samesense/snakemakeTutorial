@@ -23,7 +23,7 @@ WORK = config["WORK"]
 
 rule align:
     input:  DATA + 'fastq/{sample}.{chrom}'
-    output: temp(WORK + 'aln/{sample}.{chrom}')
+    output: WORK + 'aln/{sample}.{chrom}'
     shell:  'touch {output}'
 
 rule index:
@@ -34,7 +34,7 @@ rule index:
 rule call_variants:
     input:  bam = WORK + 'aln/{sample}.{chrom}',
             idx = WORK + 'aln/{sample}.{chrom}.idx'
-    output: temp(WORK + 'vars/{sample}.{chrom}')
+    output: WORK + 'vars/{sample}.{chrom}'
     shell:  'cat {input.bam} > {output}'
 
 def mk_chrom_input(wc):
