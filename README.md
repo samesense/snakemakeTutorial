@@ -97,7 +97,13 @@ Python virtual environments allow users multiple private module libraries. No ne
 
 
 ##### Tips
-* Add .snakemake/ to .gitignore
+* Clean up
+    * Add .snakemake/ to .gitignore
+    * Add snakejob* to .gitigore
+    * Use bash alias to clear qsub job output/errors
+        
+        alias clr='rm *~ snakejob.* nohup* Rplots.pdf *.aux *.log *.bbl *.dvi *.blg'
+
 * Separate downstream analysis and heavy memory/time scripts
     * Minimizes dependency checks
     * Decreases iteration time for plots/filters
