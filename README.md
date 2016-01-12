@@ -39,9 +39,16 @@ Python virtual environments allow users multiple private module libraries. No ne
 * Log into respublica
     * [Passwordless ssh](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
 * 3 steps, one sample [code/res1.py](code/res1.py)
-    * List rules: snakemake -s res1.py -l
-    * Dryrun: snakemake -s res1.py --dryrun summarize
-    * Run: snakemake -s res1.py summarize
+    * List rules:
+    
+            ```snakemake -s res1.py -l```
+    * Dryrun:
+    
+            ```snakemake -s res1.py --dryrun summarize```
+    * Run:
+            
+        ```snakemake -s res1.py summarize```
+
 * multi sample [code/res2.1.py](code/res2.1.py)
     * Run by rule: snakemake -s res2.1.py all
     * Run by file: snakemake -s res2.1.py ../work/res2.1/sum/s3
