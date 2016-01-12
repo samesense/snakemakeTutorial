@@ -141,3 +141,4 @@ Python virtual environments allow users multiple private module libraries. No ne
 	
 * Rerun tons of files
     * Use mv instead of rm
+* Nohup job out and error files appear in /home
