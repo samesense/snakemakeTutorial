@@ -35,7 +35,9 @@ Python virtural environments allow users multiple private module libraries. No n
 ##### [Johannes Koster's slides](http://slides.com/johanneskoester/deck-1#/1)
 * Read slides 1-10
 
-##### Examples
+##### Respublica examples
+* Log into respublica
+    * [Passwordless ssh](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
 * 3 steps, one sample [code/res1.py](code/res1.py)
 * multi sample [code/res2.1.py](code/res2.1.py)
 * expand [code/res2.2.py](code/res2.2.py)
@@ -131,5 +133,3 @@ Python virtural environments allow users multiple private module libraries. No n
 	
 * Rerun tons of files
     * Use mv instead of rm
-
-##### Summary
