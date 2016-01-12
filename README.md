@@ -84,15 +84,15 @@ Python virtural environments allow users multiple private module libraries. No n
 
         rule unzip:
             input: '../file.tar.gz'
-	    output: '../log/DONE_unzip'
-	    run:
-	        shell('tar -xvcf {input}')
-		shell('touch {output}')
+            output: '../log/DONE_unzip'
+            run:
+            	shell('tar -xvcf {input}')
+            	shell('touch {output}')
 
         rule use_unzipped_file:
             input:  '../log/DONE_unzip'
-	    output: DATA + 'file1.processed'
-	    shell:  'process.sh ../file1'
+            output: DATA + 'file1.processed'
+            shell:  'process.sh ../file1'
 
 * Threads
 * Rerun tons of files
