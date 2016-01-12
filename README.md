@@ -9,11 +9,10 @@
 * Understand template snakemake scripts
 
 #### Outline
-* Snakemake install overview
+* Snakemake installation
 * Python envs
-* Refosco snakemake
-* Respublica snakemake
-* Respublica job scripts
+* [Johannes Koster's slides](http://slides.com/johanneskoester/deck-1#/1)
+* Respublica snakemake examples
 * Snakemake cli usage
 * Dependency demo
 * Python syntax
@@ -33,6 +32,9 @@ Python virtural environments allow users multiple private module libraries. No n
         
     Source your .bash_profile to reload variables. Calling p3 will put you in the python3 env, which already has snakemake installed.
 
+##### [Johannes Koster's slides](http://slides.com/johanneskoester/deck-1#/1)
+* Read slides 1-10
+
 ##### Examples
 * 3 steps, one sample [code/res1.py](code/res1.py)
 * multi sample [code/res2.1.py](code/res2.1.py)
@@ -42,14 +44,14 @@ Python virtural environments allow users multiple private module libraries. No n
 * named input files [code/res2.5.py](code/res2.5.py)
 * referencing wildcards [code/res2.6.py](code/res2.6.py)
 * functions as inputs [code/res2.7.py](code/res2.7.py)
-* qsub [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh)
-* jobscripts [code/res3.2.py](code/run.3.2.py), [code/code/res3.2.py](code/res3.2.py), [code/jobscript.sh](code/jobscript.sh)
-* config files [code/res3.3.py](code/run.3.3.py), [code/code/res3.3.py](code/res3.3.py), [code/jobscript.sh](code/jobscript.sh), [code/config.json](code/config.json)
+* qsub and jobscripts [code/res3.1.py](code/res3.1.py), [code/run3.1.sh](code/run3.1.sh), [code/jobscript3.1.sh](code/jobscript3.1.sh)
+* config files [code/res3.2.py](code/run.3.2.py), [code/code/res3.3.py](code/res3.2.py), [code/jobscript3.1.sh](code/jobscript3.1.sh), [code/config3.2.json](code/config3.2.json)
 
 ##### Snakemake cli
-* Touch to update
-* --rerun-incomplete: fix broken files
+* -j #cores
 * --dryrun: see what will be executed
+* --touch: Touch output files (mark them up to date without really changing them) instead of running their commands. This is used to pretend that the rules were executed, in order to fool future invocations of snakemake. Fails if a file does not yet exist.
+* --rerun-incomplete: fix broken files
 
 ##### Dependencies demo
 * Jobs execute if:
@@ -91,6 +93,7 @@ Python virtural environments allow users multiple private module libraries. No n
 
 
 ##### Tips
+* Add .snakemake/ to .gitignore
 * Seperate downstream analysis and heavy memory/time scripts
     * Minimizes dependency checks
     * Decreases iteration time for plots/filters
