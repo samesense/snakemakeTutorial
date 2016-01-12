@@ -47,7 +47,7 @@ Python virtual environments allow users multiple private module libraries. No ne
 * referencing wildcards [code/res2.6.py](code/res2.6.py)
 * functions as inputs [code/res2.7.py](code/res2.7.py)
 * qsub and jobscripts [code/run3.1.sh](code/run3.1.sh)
-* json config files [code/run3.1.sh](code/run3.2.sh)
+* json config files [code/run3.2.sh](code/run3.2.sh)
     * [Check config file format](http://jsonlint.com/)
 
 ##### Snakemake cli
