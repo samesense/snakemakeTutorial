@@ -73,6 +73,16 @@ Python virtural environments allow users multiple private module libraries. No n
                 shell('head -1 {fileFile} > {output}')
                 shell('cat {input} | grep -v header >> {output}')
 
+* Read files
+  
+        import csv
+        with open('file.tab') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for row in reader:
+                sample = row['sample']
+                id = row['sample_id']
+
+
 ##### Tips
 * Seperate downstream analysis and heavy memory/time scripts
     * Minimizes dependency checks
