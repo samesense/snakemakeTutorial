@@ -47,13 +47,15 @@ Python virtual environments allow users multiple private module libraries. No ne
 * referencing wildcards [code/res2.6.py](code/res2.6.py)
 * functions as inputs [code/res2.7.py](code/res2.7.py)
 * qsub and jobscripts [code/run3.1.sh](code/run3.1.sh)
-* config files [code/run3.1.sh](code/run3.2.sh)
+* json config files [code/run3.1.sh](code/run3.2.sh)
+    * [Check config file format](http://jsonlint.com/)
 
 ##### Snakemake cli
 * -j #cores
 * --dryrun: see what will be executed
 * --touch: Touch output files (mark them up to date without really changing them) instead of running their commands. This is used to pretend that the rules were executed, in order to fool future invocations of snakemake. Fails if a file does not yet exist.
 * --rerun-incomplete: fix broken files
+* -F: force execution of all rules
 
 ##### Dependencies demo
 * Jobs execute if:
