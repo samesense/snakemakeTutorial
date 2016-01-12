@@ -122,19 +122,19 @@ Python virtual environments allow users multiple private module libraries. No ne
     * Decreases iteration time for plots/filters
     * Ex. sf1.py has variant calling/summarize and sf2.py has paper figures
     * Watch out for temp file clobbering (ex samtools sort needs a tmp prefix to avoid over-writing tmp files)
-* Sentinel output
+* Unknown output files
 
         rule unzip:
             input: '../file.tar.gz'
-            output: '../log/DONE_unzip'
+            output: '../fileIWant', '../log/DONE_unzip'
             run:
-            	shell('tar -xvcf {input}')
+            	shell('tar -zxvf {input}')
             	shell('touch {output}')
 
         rule use_unzipped_file:
-            input:  '../log/DONE_unzip'
-            output: DATA + 'file1.processed'
-            shell:  'process.sh ../file1'
+            input:  fileToProcess='../fileIWant', done='../log/DONE_unzip'
+            output: DATA + 'file.processed'
+            shell:  'process.sh {input.fileToProcess} {output}'
 
 * Threads
 
