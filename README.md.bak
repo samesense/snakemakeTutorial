@@ -22,7 +22,7 @@
 [See Jeremy's instructions](https://github.research.chop.edu/leipzigj/fastq_to_gvcf_for_noor_dawany)
 
 ##### Python envs
-Python virtual environments allow users multiple private module libraries. No need for sudo for most installations (system dependencies are exceptions).
+Python virtural environments allow users multiple private module libraries. No need for sudo for most installations (system dependencies are exceptions).
 * Respublica env
 
     Add to your .bash_profile
@@ -96,11 +96,11 @@ Python virtual environments allow users multiple private module libraries. No ne
 
 ##### Tips
 * Add .snakemake/ to .gitignore
-* Separate downstream analysis and heavy memory/time scripts
+* Seperate downstream analysis and heavy memory/time scripts
     * Minimizes dependency checks
     * Decreases iteration time for plots/filters
     * Ex. sf1.py has variant calling/summarize and sf2.py has paper figures
-    * Watch out for temp file clobbering (ex samtools sort needs a tmp prefix to avoid over-writing tmp files)
+    * Watch out for temp file clobbering (ex samtools sort needs a tmp prefix to avoid over-writting tmp files)
 * Sentinel output
 
         rule unzip:
