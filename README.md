@@ -39,7 +39,12 @@ Python virtual environments allow users multiple private module libraries. No ne
 * Log into respublica
     * [Passwordless ssh](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
 * 3 steps, one sample [code/res1.py](code/res1.py)
+    * List rules: snakemake -s res1.py -l
+    * Dryrun: snakemake -s res1.py --dryrun summarize
+    * Run: snakemake -s res1.py summarize
 * multi sample [code/res2.1.py](code/res2.1.py)
+    * Run by rule: snakemake -s res2.1.py all
+    * Run by file: snakemake -s res2.1.py ../work/res2.1/sum/s3
 * expand [code/res2.2.py](code/res2.2.py)
 * multi sample & chrom [code/res2.3.py](code/res2.3.py)
 * temp files [code/res2.4.py](code/res2.4.py)
@@ -51,7 +56,8 @@ Python virtual environments allow users multiple private module libraries. No ne
     * [Check config file format](http://jsonlint.com/)
 
 ##### Snakemake cli
-* -j #cores
+* -l: list rules
+* -j #cores (ex. -j5 for 5 cores)
 * --dryrun: see what will be executed
 * --touch: Touch output files (mark them up to date without really changing them) instead of running their commands. This is used to pretend that the rules were executed, in order to fool future invocations of snakemake. Fails if a file does not yet exist.
 * --rerun-incomplete: fix broken files
