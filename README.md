@@ -10,7 +10,6 @@
 
 #### Outline
 * Snakemake installation
-* Getting started
 * Python envs
 * [Johannes Koster's slides](http://slides.com/johanneskoester/deck-1#/1)
 * Respublica snakemake examples
@@ -22,20 +21,9 @@
 #### Snakemake installation
 [See Jeremy's instructions](https://github.research.chop.edu/leipzigj/fastq_to_gvcf_for_noor_dawany)
 
-#### Getting started
-* Log into respublica
-    * [Passwordless ssh](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
-
 #### Python envs
 Python virtual environments allow users multiple private module libraries. No need for sudo for most installations (system dependencies are exceptions).
-* Respublica env
-
-    Add to your .bash_profile
-
-        export PATH=/mnt/isilon/cbmi/variome/perry/respublicaTools/anaconda3/bin:$PATH
-        alias p3="source activate snakeenv"
-        
-    Source your .bash_profile to reload variables. Calling p3 will put you in the python3 env, which already has snakemake installed.
+[See Jeremy's instructions](https://github.research.chop.edu/leipzigj/fastq_to_gvcf_for_noor_dawany)
 
 #### [Johannes Koster's slides](http://slides.com/johanneskoester/deck-1#/1)
 * Read slides 1-10
@@ -189,7 +177,3 @@ Python virtual environments allow users multiple private module libraries. No ne
 	
 * Rerun tons of files: use mv instead of rm
 * Nohup job out and error files appear in /home
-
-#### Extra time
-* [Passwordless ssh](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/)
-* Preconfigured iTerm2 sessions w/ [iTermocil](https://github.com/TomAnthony/itermocil)
